@@ -1,0 +1,27 @@
+<template>
+	<div class="homepage" style={bgstyle}>
+		<div class="hpanel">
+			<div class="left-corner">
+				<button class="no-border" onclick={navigatetohomepage}>BLUEBUS</button>
+			</div>
+			<div class="right-corner">
+				<div class="right-corner2">
+					<button class="no-border" onclick={handlebookings}>BOOKINGS</button>
+					<button class="no-border" >HELP</button>
+				</div>
+				<div class="right-corner1">
+					<button class="no-border1">{livetime}</button>
+					<button class="no-border">PROFILE</button>
+					<div class="dropdown-content">
+						<a>ACCOUNT</a>
+						<a onclick={openpopup}>PASSENGER</a>
+						<a>PAYMENT</a>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="maps">
+			<lightning-map class="maps2" map-markers={mapsss}></lightning-map>
+		</div>
+	</div>
+</template>

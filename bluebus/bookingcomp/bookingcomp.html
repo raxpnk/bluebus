@@ -1,0 +1,124 @@
+<template>
+	<div class="homepage" style={bgstyle}>
+		<div class="hpanel">
+			<div class="left-corner">
+				<button class="no-border" onclick={navigatetohomepage}>BLUEBUS</button>
+			</div>
+			<div class="right-corner">
+				<div class="right-corner2">
+					<button class="no-border" onclick={handlelocations}>LOCATIONS</button>
+					<button class="no-border" >HELP</button>
+				</div>
+				<div class="right-corner1">
+					<button class="no-border1">PROFILE</button>
+					<div class="dropdown-content">
+						<a>ACCOUNT</a>
+						<a onclick={openpopup}>PASSENGER</a>
+						<a>PAYMENT</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+		<div class="center-element">
+			<div class={togglebar}>
+				<button class="toggle-button" onclick={handleright} if:true={slideright}>🞂</button>
+				<div class="toggleclass" if:true={showtoggle}>
+					<div class="filterby">FILTER BY:</div>
+					<div class="session-class">
+						<p class="filter-texts">SESSION</p>
+						<button class={sessionbutton1} onclick={showall}>All</button>
+						<button class={sessionbutton2} onclick={showup}>Upcoming</button>
+						<button class={sessionbutton3} onclick={showcom}>Completed</button>
+					</div>
+					<div class="session-class">
+						<p class="filter-texts">DATE</p>
+						<input class="session-button" type="date" value={fdate} onchange={filterdate}></input>
+					</div>
+					<div class="session-class">
+						<p class="filter-texts">MODE</p>
+						<select class="session-button" onchange={filtermode} value={fmode}>
+            			<option value="Bus">BUS</option>
+            			<option value="Train">TRAIN</option>
+            			<option value="Flight">FLIGHT</option>
+            			<option value="Cab">CAB</option>
+         				</select>
+					</div>
+				</div>
+				<button class="toggle-button2" onclick={handleleft} if:true={slideleft}>🞀</button>
+			</div>
+
+			<div class="center-element2">
+				<div class="in-between">
+
+					<div class="comp1" for:each={book1l} for:item="book1" key={book1.Id} if:true={completed}>
+						<img src="https://www.freeiconspng.com/thumbs/bus-icon/bus-icon-15.jpg" />
+						<div class="nrouteclass">
+							<p class="nameclass">{book1.Routeshift__r.Name}</p>
+							<p class="modeclass">{book1.Mode__c}</p>
+						</div>
+
+						<div class="routeclass">
+							<p class="pointclass">{book1.Bpoint__c}</p>
+							<div class="timeclass">
+								<p class="startclass">{book1.Jdate__c}</p>
+								<p class="endclass">({book1.Journeytime__c})</p>
+							</div>
+						</div>
+						<div class="routeclass">
+							<p class="pointclass">{book1.Dpoint__c}</p>
+							<div class="timeclass">
+								<p class="startclass">{book1.JEdate__c}</p>
+								<p class="endclass">({book1.JourneyEtime__c})</p>
+							</div>
+						</div>
+						<div class="routeclass">
+							<p class="startclass">SEATS:{book1.Count__c}</p>
+							<p class="startclass">FARE:{book1.Finalpaid__c}</p>
+						</div>
+						<div class="routeclass">
+							RATINGS:
+							<input class="newbutton" type="Number" onchange={handleCLick2} value={rating} data-id={book1.Id} placeholder={book1.Review__c} />
+						</div>
+					</div>
+
+
+
+						<div class="comp1" for:each={book2l} for:item="book2" key={book2.Id} if:true={upcoming}>
+							<img src={book2.image}/>
+							<div class="nrouteclass">
+								<p class="nameclass">{book2.Routeshift__r.Name}</p>
+								<p class="modeclass">{book2.Mode__c}</p>
+							</div>
+
+							<div class="routeclass">
+								<p class="pointclass">{book2.Bpoint__c}</p>
+								<div class="timeclass">
+									<p class="startclass">{book2.Jdate__c}</p>
+									<p class="endclass">({book2.Journeytime__c})</p>
+								</div>
+							</div>
+
+							<div class="routeclass">
+								<p class="pointclass">{book2.Dpoint__c}</p>
+								<div class="timeclass">
+									<p class="startclass">{book2.JEdate__c}</p>
+									<p class="endclass">({book2.JourneyEtime__c})</p>
+								</div>
+							</div>
+							<div class="routeclass">
+								<p class="startclass">SEATS:{book2.Count__c}</p>
+								<p class="startclass">FARE:{book2.Finalpaid__c}</p>
+							</div> 
+							<button class="newbutton" value={book2.Id} onclick={handleClick}>CANCEL</button>
+						</div>
+
+
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

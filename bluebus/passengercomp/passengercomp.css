@@ -1,0 +1,193 @@
+:host {
+    display: block;
+	width: 75%;	
+}
+
+.mainpage{
+	border-radius: 20px;
+	border:3px solid white;
+	color: white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-start;
+	font-weight: bold;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+	z-index: 1;
+	height: 15cm;
+}
+
+.panel{
+	position: relative;
+	display: flex;
+	flex-direction: row;
+	padding-top: 1cm;
+	justify-content: center;
+	align-items: center;
+}
+
+.toptext{
+	cursor: pointer;
+	padding-left: 0.3cm;
+	padding-right: 0.3cm;
+	font-size: 1cm;
+	margin-left: 1cm;
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.537), transparent);
+}
+
+.toptextsmall{
+	cursor: pointer;
+	font-size: 0.5cm;
+	padding-left: 1cm;
+}
+
+.inter{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: row;
+}
+
+.creation, .creation2{
+	width: 50%;
+	background-color: transparent;
+	margin:1cm;
+}
+
+.creation{
+	margin-right: 0;
+}
+
+.creation-text{
+	padding-left: 1cm;
+}
+
+.creation input,select,button{
+	margin-bottom: 15px;
+	width: 100%;
+	color: black;
+	height: 1cm;
+	border-radius: 20px;
+}
+
+.creation input::placeholder ,.creation2 input::placeholder{
+	font-weight: bold;
+	color: gray;
+	text-align: center;
+}
+
+
+.creation2 input{
+	margin-bottom: 15px;
+	width: 100%;
+	color: black;
+	height: 1cm;
+	border-radius: 20px;
+}
+
+.creation p{
+	padding-left: 0.21cm;
+}
+
+.creation2 p{
+	padding-left: 0.21cm;
+}
+
+.dropdown-content{
+	display: flex;
+	flex-direction: row;
+}
+
+
+.dropdown-content button:hover{
+	background-color: black;
+	color: white;
+}
+
+.backbutton{
+	padding-bottom: 1cm;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: center;
+}
+
+.button1, .button2{
+	width: 10%;
+	background-color: white;
+	margin-right: 0.30cm;
+	margin-left: 0.30cm;
+}
+
+.inside-text{
+	color: gray;
+}
+
+.button1:hover{
+	background-color: rgb(232, 107, 40);
+}
+
+.button2:hover{
+	color: white;
+	background-color: black;
+}
+
+.inter2{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	overflow-y: scroll;
+	height: 75%;
+	margin-top: 1cm;
+}
+
+.inter2::-webkit-scrollbar {
+	display: none;
+}
+
+.passlist{
+	margin-left: 1cm;
+	margin-right: 1cm;
+	color: black;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: center;
+	background-color: white;
+	border-radius: 15px;
+	margin-bottom: 0.5cm;
+	transition: transform 300ms;
+	border:3px solid black;
+}
+
+.passlist:hover{
+	border:3px solid black;
+	transform: scale(1.03);
+}
+
+.passlist-inter{
+	margin-top: 1cm;
+}
+
+.passlist button{
+	margin-top: 0.3cm;
+	width: 2cm;
+	margin-left: 0.5cm;
+}
+
+.passlist button:hover{
+	background-color: black;
+	color: white;
+}
+
+.button3{
+	margin-top: 1cm;
+	width: 2cm;
+}
+
+.button3:hover{
+	background-color: black;
+	color: white;
+}

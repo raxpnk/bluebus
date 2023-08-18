@@ -1,0 +1,330 @@
+:host {
+    display: block;
+}
+
+.homepage {
+    top: 0;
+    right: 0;
+    position: fixed;
+    background-color: rgba(60, 110, 165, 255);
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+    overflow-y: auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hpanel {
+    height: 12.5%;
+    background-color: transparent;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 1005;
+}
+
+.left-corner {
+    display: flex;
+    font-size: 16px;
+    padding-right: 1cm;
+    border-right: 1px dotted white;
+}
+
+.right-corner {
+    display: flex;
+    font-size: 16px;
+}
+
+.right-corner1 {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 1cm;
+}
+
+.right-corner2{
+    padding-right: 1cm;
+    border-right: 1px dotted white;
+}
+
+.right-corner img {
+    width: 35px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.no-border {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.no-border1 {
+    border: none;
+    background-color: transparent;
+}
+
+.no-border:hover {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.537), transparent);
+}
+
+.right-corner .no-border{
+    margin-left: 1cm;
+}
+
+.bgimage {
+	position: absolute;
+	pointer-events: none;
+	filter: blur(5px);
+	width: 100%;
+	height: 100%;
+}
+
+.dropdown-content {
+    font-size: 12px;
+    margin-top: 0.5cm;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.right-corner1:hover .dropdown-content,
+.no-border1:hover + .dropdown-content{
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+.center-element{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    height: 85%;
+    width: 96%;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    background-color: transparent;
+}
+
+.text-class{
+    font-weight: bold;
+    height: 20%;
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    border-radius: 20px;
+    border: 2px solid black;
+}
+
+.names{
+    width: 25%;
+    border-right:3px dotted black;
+}
+
+.nameclass{
+    font-size: 1cm;
+}
+
+.modeclass{
+    font-size: 0.3cm;
+}
+
+.pointclass{
+    font-size: 0.7cm;
+}
+
+.timeclass{
+    display: flex;
+    flex-direction: row;
+}
+
+.dateclass{
+    padding-right: 20px;
+}
+
+.typeclass{
+    display: flex;
+    flex-direction: row;
+}
+
+.typeclass p{
+    margin-right: 0.6cm;
+}
+
+.seatnum{
+    display: flex;
+    flex-direction: row;
+}
+
+.lastelement{
+    height: 80%;
+    background-color: white;
+    border-radius: 20px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+}
+
+.center-element input::placeholder{
+	font-weight: bold;
+	color: gray;
+	text-align: center;
+}
+
+
+.insert-tab{
+    width: 50%;
+    border-radius: 20px;
+    margin: 1cm;
+    background-color: white;
+    border:2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.insert-tab input,select{
+    height: 1cm;
+    border-radius: 20px;
+}
+
+.payclass p{
+    font-weight: bold;
+}
+
+.pay-tab{
+    width: 50%;
+    border-radius: 20px;
+    margin: 1cm;
+    margin-left: 0;
+    border:2px solid black;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.insertclass{
+    margin:10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.insertclass select{
+    border-right:2px solid gray;
+    border-left:2px solid black;
+    border-top:2px solid black;
+    border-bottom:2px solid gray;
+}
+
+.seatnum{
+    margin:10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.seatnum2{
+    margin:10px;
+    display: flex;
+    flex-direction: row;   
+}
+
+.seatnum3{
+    background-color: black;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.seatnum3 input{
+    width: 10%;
+    color: black;
+}
+
+.seatnum3 button{
+    width: 10%;
+    color: black;
+    height: 1cm;
+    border-radius: 20px;
+}
+
+.all-text{
+    padding-left: 0.21cm;
+    font-weight: bold;
+}
+
+.finalpay{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px;
+}
+
+.payclass{
+    margin: 10px;
+}
+
+.button1{
+    margin-top: 1cm;
+    height: 1cm;
+    border-radius: 20px;
+    width: 15%;
+	background-color: white;
+	margin-right: 0.30cm;
+	margin-left: 0.30cm;
+}
+
+.button2{
+    margin-top: 1cm;
+    height: 1cm;
+    border-radius: 20px;
+    width: 15%;
+	background-color: white;
+	margin-right: 0.30cm;
+	margin-left: 0.30cm;
+}
+
+.pay-tab input{
+    height: 1cm;
+    border-radius: 20px;
+    margin: 10px;
+}
+
+.button1:hover{
+    background-color: black;
+    color: white;
+}
+
+.button2:hover{
+    background-color: rgb(232, 107, 40);
+    color: black;
+}
+
+.message{
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+}

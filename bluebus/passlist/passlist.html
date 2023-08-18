@@ -1,0 +1,10 @@
+<template>
+	<div class="rsclass">
+		<div for:each={passlist} for:item="pass" key={pass.Id} class="newclass">
+			<div class="hh">
+			<p class="oneone">NAME:{pass.Name}</p> <p class="oneone">AGE:{pass.Age__c}</p> <p class="oneone">GENDER:{pass.Gender__c}</p>
+			<button class="newbutton" onclick={oneclick} value={pass.Id}>DELETE</button></div>
+		</div>
+        <button class="newbutton1" onclick={closepopup}>CLOSE</button>
+	</div>
+</template>

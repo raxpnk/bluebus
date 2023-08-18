@@ -1,0 +1,145 @@
+:host {
+    display: block;
+}
+
+.homepage {
+    top: 0;
+    right: 0;
+    position: fixed;
+    background-color: rgba(60, 110, 165, 255);
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+    overflow-y: auto;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hpanel {
+    height: 12.5%;
+    background-color: transparent;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 1005;
+}
+
+.left-corner {
+    display: flex;
+    font-size: 16px;
+    padding-right: 1cm;
+    border-right: 1px dotted white;
+}
+
+.right-corner {
+    display: flex;
+    font-size: 16px;
+}
+
+.right-corner1 {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 1cm;
+}
+
+.right-corner2{
+    padding-right: 1cm;
+    border-right: 1px dotted white;
+}
+
+.right-corner img {
+    width: 35px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.no-border {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.no-border1 {
+    border: none;
+    background-color: transparent;
+}
+
+.no-border:hover {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.537), transparent);
+}
+
+.right-corner .no-border{
+    margin-left: 1cm;
+}
+
+.bgimage {
+	position: absolute;
+	pointer-events: none;
+	filter: blur(5px);
+	width: 100%;
+	height: 100%;
+}
+
+.dropdown-content {
+    font-size: 12px;
+    margin-top: 0.5cm;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.right-corner1:hover .dropdown-content,
+.no-border1:hover + .dropdown-content{
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+
+.fromee{
+    color: black;
+    background-color: gray;
+}
+
+.maps{
+    height: 85%;
+    border-radius: 20px;
+    width: 96%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    color: black;
+}
+
+.maps2{
+    border-radius: 20px;
+    width: 100%;
+    height: 100%;
+}
+
+.maps2::-webkit-scrollbar {
+	display: none;
+}
+
+.homepage::-webkit-scrollbar {
+	display: none;
+}

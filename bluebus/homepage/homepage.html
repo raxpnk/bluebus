@@ -1,0 +1,126 @@
+<template>
+	<div class="homepage" style={bgstyle} if:true={showmainparent}>
+		<div class="hpanel">
+			<div class="left-corner">
+				<button class="no-border" onclick={navigatetohomepage}>BLUEBUS</button>
+			</div>
+			<div class="right-corner">
+				<div class="right-corner2">
+					<button class="no-border" onclick={handlebookings}>BOOKINGS</button>
+					<button class="no-border" onclick={handlelocations}>LOCATIONS</button>
+					<button class="no-border" >HELP</button>
+				</div>
+				<div class="right-corner1">
+					<button class="no-border1">{livetime}</button>
+					<button class="no-border">PROFILE</button>
+					<div class="dropdown-content">
+						<a>ACCOUNT</a>
+						<a onclick={openpopup}>PASSENGER</a>
+						<a>PAYMENT</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<div class="center-element" if:true={showparent}>
+			<div class="center-element3">
+				<div class="review-chart">aaa</div>
+				<div class="aboutus-chart">bbbb</div>
+			</div>
+			<div class="center-element1">
+				<button class={modebutton} value="Bus" onclick={handleNextClick} style={buttonStyle}>BUS</button>
+				<button class={modebutton1} value="Train" onclick={handleNextClick} style={buttonStyle1}>TRAIN</button>
+				<button class={modebutton2} value="Flight" onclick={handleNextClick} style={buttonStyle2}>FLIGHT</button>
+				<button class={modebutton3} value="Cab" onclick={handleNextClick} style={buttonStyle3}>CAB</button>
+			</div>
+
+			<div class="center-element2">
+				<div class="choosing">
+					<div class="choosing2">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5jFQaxCxeylhIUqP-1YzxA9c0dv5JVHAgPYDkrRRslZlaQAgeKyRXvPwqXjyVA-MGMMM&usqp=CAU" class="imgclass"/>
+					</div>
+						<div class="choosing3">
+							<p class="choosing3-text">BOARDING</p>
+							<select class="points" onchange={handleboard} value={bpoint}>
+							<option class="options" value="Bangalore">BANGALORE</option>
+							<option class="options" value="Theni">THENI</option>
+							<option class="options" value="Mumbai">MUMBAI</option>
+							<option class="options" value="Coimbatore">COIMBATORE</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="choosing">
+					<div class="choosing2">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5jFQaxCxeylhIUqP-1YzxA9c0dv5JVHAgPYDkrRRslZlaQAgeKyRXvPwqXjyVA-MGMMM&usqp=CAU" class="imgclass"/>
+					</div>
+					<div class="choosing3">
+						<p class="choosing3-text">DESTINATION</p>
+						<select class="points" onchange={handledest} value={dpoint}>
+						<option class="options" value="Bangalore">BANGALORE</option>
+						<option class="options" value="Theni">THENI</option>
+						<option class="options" value="Mumbai">MUMBAI</option>
+						<option class="options" value="Coimbatore">COIMBATORE</option>
+						</select>
+					</div>
+				</div>
+
+				<div class="choosing">
+					<div class="choosing2">
+						<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRQ_JEcpBNfqcMHX2Ooovjg_htGHWm-P0Hj4MtZncLvbjMCNl_Uadwtl2md0D5_GmJieBE&usqp=CAU" class="imgclass"/>					
+					</div>
+					<div class="choosing3">
+						<p class="choosing3-text">TRAVEL DATE</p>
+						<input class="points" type="date" onchange={handledate} value={jdate} />
+					</div>
+				</div>
+				<div class="next-button" onclick={searchbutton}>
+					<p>SEARCH</p>
+				</div>
+			</div>
+		</div>
+
+		<div class="searchvehicle" if:true={showchild}>
+			<div class="nrouteclass2" if:true={nodata}>
+				<p class="noclass">no travels found on this date</p>
+			</div>
+
+
+			<div for:each={searchResults} for:item="record" key={record.Id} class="vehicledata">
+				<img src="https://www.freeiconspng.com/thumbs/bus-icon/bus-icon-15.jpg" />
+					<div class="nrouteclass">
+						<p class="nameclass">{record.Name}</p>
+						<p class="modeclass">{record.Mode__c}</p>
+					</div>
+							
+					<div class="routeclass">
+						<p class="pointclass">{record.Bpoint__c}</p>
+						<div class="timeclass">
+							<p class="startclass">{record.Jdate__c}</p>
+							<p class="endclass">({record.JOtime__c})</p>
+						</div>
+					</div>
+
+					<div class="routeclass">
+						<p class="pointclass">{record.Dpoint__c}</p>
+						<div class="timeclass">
+							<p class="startclass">{record.JEdate__c}</p>
+							<p class="endclass">({record.JOEtime__c})</p>
+						</div>
+					</div>
+						
+					<div class="routeclass">
+						<p class="startclass">RATING:{record.Overallform__c}</p>
+						<p class="startclass">FARE:{record.Fare__c}</p>
+					</div> 
+					<button class="bookbutton" value={record.Id} onclick={booknowbutton}>BOOKNOW</button>
+			</div>	
+		</div>
+	</div>
+	<div if:true={showbooking}>
+		<c-newcompp newmessage={newmain}></c-newcompp>
+	</div>
+</template>

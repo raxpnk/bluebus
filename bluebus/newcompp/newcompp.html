@@ -1,0 +1,150 @@
+<template>
+	<div class="homepage" style={bgstyle}>
+		<div class="hpanel">
+			<div class="left-corner">
+				<button class="no-border" onclick={navigatetohomepage}>BLUEBUS</button>
+			</div>
+
+			<div class="right-corner">
+				<div class="right-corner2">
+					<button class="no-border" onclick={handlebookings}>BOOKINGS</button>
+					<button class="no-border" onclick={handlelocations}>LOCATIONS</button>
+					<button class="no-border">HELP</button>
+				</div>	
+				<div class="right-corner1">
+					<button class="no-border1">{livetime}</button>
+					<button class="no-border">PROFILE</button>
+					<div class="dropdown-content">
+						<a>ACCOUNT</a>
+						<a onclick={openpopup}>PASSENGER</a>
+						<a>PAYMENT</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<div class="center-element">
+			<div class="text-class">
+				<div class="names">
+					<p class="nameclass">{name__c}</p>
+					<div class="typeclass">
+						<p class="modeclass">{mode__c}</p>
+						<p class="modeclass" if:true={showtype}>{typec}</p>
+					</div>
+				</div>
+				<div class="boarding">
+					<p class="pointclass">{bpoint__c}</p>
+					<div class="timeclass">
+						<p class="dateclass">{dood.Jdate__c}</p>
+						<p>({dood.JOtime__c})</p>
+					</div>
+				</div>
+				<div class="destination">
+					<p class="pointclass">{dpoint__c}</p>
+					<div class="timeclass">
+						<p class="dateclass">{dood.JEdate__c}</p>
+						<p class="dateclass">({dood.JOEtime__c})</p>
+					</div>
+				</div>
+				<div class="fare">
+					<p>STANDARD:{dood.Fare__c}</p>
+					<p if:true={showflighttype}>VIP:{dood.Vfare__c}</p>
+					<p if:true={showtraintype}>A-Class:{dood.Afare__c}</p>
+					<p if:true={showtraintype}>B-Class:{dood.Bfare__c}</p>
+				</div>
+			</div>
+
+
+
+
+			<div class="lastelement">
+				<div class="insert-tab">
+					<div if:true={showtraintype} class="insertclass">
+						<p class="all-text">CLASS:</p>
+						<select onchange={handletrain} value={trainchoose}>
+            			<option value="Aclass">A-CLASS</option>
+            			<option value="Bclass">B-CLASS</option>
+            			<option value="Cclass">C-CLASS</option>
+         				</select>
+					</div>
+					<div if:true={showflighttype} class="insertclass">
+						<p class="all-text">CLASS:</p>
+						<select onchange={handleflight} value={flightchoose}>
+            			<option value="VIP">VIP</option>
+            			<option value="Standard">STANDARD</option>
+         				</select>
+					</div>
+
+
+					<div class="insertclass">
+						<p class="all-text">COUNT:</p>
+						<input type="number" value={count} onchange={handlecount} placeholder='0' />
+      				</div>
+					<div class="insertclass">
+						<p class="all-text">COUPON:</p>
+						<select onchange={handlecoupon} value={couponchoose}>
+            			<optgroup label="SPECIAL USERS:">
+               			<option value="SUPERBLUE">SUPERBLUE</option>
+            			</optgroup>
+            			<optgroup label="OTHERS:">
+               			<option value="CODEBLUE">CODEBLUE</option>
+               			<option value="BLUEBLUE">BLUEBLUE</option>
+            			</optgroup>
+         				</select>
+					</div>
+					<div class="insertclass">
+						<p class="all-text">METHOD:</p>
+						<select onchange={handlemethod} value={methodchoose}>
+            			<option value="Gpay">GPAY</option>
+			            <option value="Wallet">WALLET</option>
+            			<option value="Card">CARD</option>
+      				   </select>
+					</div>
+
+
+					<div class="seatnum2">
+						<p class="all-text">SEATS BOOKED:</p>
+						<div for:each={seatsbookedlist} for:item="obj" key={obj}>
+						<p class="all-text">{obj.Seat__c},</p>
+						</div>
+					</div>
+				</div>
+
+
+
+
+				<div class="pay-tab">
+					<div class="seatnum" if:true={showpasssearch}>
+						<p class="all-text">SEARCH PASSENGER:</p>
+						<input type="text" class="blackclass1" placeholder="SEARCH" value={searchpass}
+            			onchange={changepass} if:true={showpasssearch} />
+      				</div>
+					<div class="seatnum3" for:each={passlist} for:item="obj" key={obj.Id} if:true={showpasssearch}>
+						<p class="all-text">NAME:{obj.Name} AGE:{obj.Age__c} GENDER:{obj.Gender__c}</p>		
+						<input type="Number" placeholder="SEAT NUM" value={myseat} onchange={findseatnum} />
+						<button onclick={addpass} data-pass-id={obj.Id}>ADD</button>
+					</div>
+
+
+					<div class="payclass">
+						<p>TOTALSEATS/PASSENGERS:{maincount}</p>
+						<p>TOTAL:{newbcTotal}</p>
+						<p>GST:{newgst}</p>
+						<P>INSURANCE:20</P>
+						<p>COUPON:{couponfare}</p>							
+						<p>FINAL AFTER COUPON+INSURANCE+GST+TOTAL:{finalfare}</p>
+					</div>
+					<input type="Number" placeholder={finalfare} value={finalamount} onchange={payfinalamount} class="finalinputs"/>
+					<div class="finalpay">
+						<button class="button1" onclick={navigatetohome}>BACK</button>
+						<button class="button2" onclick={pay}>PAY</button>
+					</div>
+					<p class="message" if:true={showmessage} >you will be redirected to the home page after payment</p>
+				</div>
+			</div>
+		</div>
+	</div>
+</template>

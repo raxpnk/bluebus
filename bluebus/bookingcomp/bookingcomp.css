@@ -1,0 +1,339 @@
+:host {
+    display: block;
+}
+
+.homepage {
+    top: 0;
+    right: 0;
+    position: fixed;
+    background-color: rgba(60, 110, 165, 255);
+    width: 100%;
+    height: 100%;
+    z-index: 900;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hpanel {
+    height: 12.5%;
+    background-color: transparent;
+    width: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    z-index: 1005;
+}
+
+.left-corner {
+    display: flex;
+    font-size: 16px;
+    padding-right: 1cm;
+    border-right: 1px dotted white;
+}
+
+.right-corner {
+    display: flex;
+    font-size: 16px;
+}
+
+.right-corner1 {
+    display: flex;
+    justify-content: flex-end;
+    padding-left: 1cm;
+}
+
+.right-corner2{
+    padding-right: 1cm;
+    border-right: 1px dotted white;
+}
+
+.right-corner img {
+    width: 35px;
+    height: auto;
+    margin-right: 10px;
+}
+
+.no-border {
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+    box-shadow: none;
+    transition: box-shadow 0.3s ease;
+}
+
+.no-border1 {
+    border: none;
+    background-color: transparent;
+}
+
+.no-border:hover {
+    background: linear-gradient(0deg, rgba(255, 255, 255, 0.537), transparent);
+}
+
+.right-corner .no-border{
+    margin-left: 1cm;
+}
+
+.bgimage {
+	position: absolute;
+	pointer-events: none;
+	filter: blur(5px);
+	width: 100%;
+	height: 100%;
+}
+
+.dropdown-content {
+    font-size: 12px;
+    margin-top: 0.5cm;
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    width: 150px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 5px;
+    z-index: 1;
+}
+
+.right-corner1:hover .dropdown-content,
+.no-border1:hover + .dropdown-content{
+    display: block;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 10px;
+    text-decoration: none;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+}
+
+.dropdown-content a:last-child {
+    border-bottom: none;
+}
+
+
+.fromee{
+    color: black;
+    background-color: gray;
+}
+
+.center-element{
+    height: 85%;
+    width: 96%;
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+}
+
+.toggle-bar{
+    color: black;
+    height: 100%;
+    width: 0.7cm;
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.toggle-bar2{
+    color: black;
+    height: 100%;
+    width: 20%;
+    display: flex;
+    background-color: white;
+    border-radius: 20px;
+}
+
+.toggle-button{
+    border-radius: 20px;
+    width: 100%;
+    background-color:rgb(232, 107, 40) ;
+}
+
+.toggle-button2{
+    border-radius: 20px;
+    background-color:rgb(232, 107, 40) ;
+}
+
+
+.toggleclass{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    width: 100%;
+    margin: 10px;
+    margin-bottom: 10px;
+    background-color: white;
+    border: 2px solid gray;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 20px;
+}
+
+.filterby{
+    display: flex;
+    align-items: center;
+    padding-bottom: 10%;
+    padding-top: 10%;
+    font-weight: bold;
+}
+
+.session-class{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.filter-texts{
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+
+.session-button{
+    width: 100%;
+    margin-bottom: 10px;
+    height: 0.8cm;
+    background-color: white;
+    border: 2px solid black;
+    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
+    border-radius: 20px;
+}
+
+.session-button:hover{
+    width: 100%;
+    margin-bottom: 10px;
+    height: 0.8cm;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
+    border-radius: 20px;
+}
+
+.session-button0{
+    width: 100%;
+    margin-bottom: 10px;
+    height: 0.8cm;
+    background-color: black;
+    color: white;
+    border: 2px solid black;
+    border-bottom: 2px solid gray;
+    border-right: 2px solid gray;
+    border-radius: 20px;
+}
+
+.center-element2{
+    height: 100%;
+    width: 100%;
+    background-color: white;
+    margin-left: 15px;
+    align-items: center;
+    overflow-y: auto;
+    border-radius: 20px;
+}
+
+.center-element2::-webkit-scrollbar {
+	display: none;
+}
+
+.in-between{
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    margin: 30px;
+    height: 100%;
+}
+
+.comp1{
+    display: flex;
+    flex-direction: row;
+    color: black;
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+    height: 22%;
+    border: 1px solid rgb(0, 0, 0);
+    margin-bottom: 30px;
+    transition: transform 300ms;
+    border-radius: 20px;
+    font-weight: bold;
+}
+
+.comp1:hover {
+    transform: scale(1.03);
+}
+
+.comp1 img{
+    width: 7%;
+    transition: transform 1s;
+}
+
+.comp1 img:hover {
+    transform: rotate(360deg);
+}
+
+.dateclass{
+    font-weight: bold;
+}
+
+.nameclass{
+    font-size: 1cm;
+}
+
+.routeclass{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.nrouteclass{
+    padding-right: 7%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    border-right: 2px dotted black;
+}
+
+.pointclass{
+    font-size: 0.6cm;
+}
+
+.timeclass{
+    font-weight: bold;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.seatclass{
+    font-size: 0.5cm;
+}
+
+
+.endclass{
+    padding-left: 0.5cm;
+}
+
+.modeclass{
+    text-transform: uppercase;
+}
+
+.newbutton{
+    border-radius: 20px;
+    height: 1cm;
+    width: 2cm;
+    background-color: white;
+    border-top: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid gray;
+    border-bottom: 2px solid gray;
+}
+
+.newbutton:hover{
+    background-color: black;
+    color: white;
+}

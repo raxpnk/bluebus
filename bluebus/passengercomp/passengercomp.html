@@ -1,0 +1,56 @@
+<template>
+	<div class="mainpage" style={bgstyle}>
+		<div class="panel">
+			<p class={toptextp1} onclick={handletoptext1}>PASSENGERS</p>
+			<p class={toptextp2} onclick={handletoptext2}>NEW PASSENGER</p>
+		</div>
+
+		<div class="inter" if:true={showinter}>
+			<div class="creation">
+				<p>NAME</p>
+				<input type="text" value={fname} onchange={fnamec} placeholder="first name">
+				<input type="text" value={lname} onchange={lnamec} placeholder="last name"/>
+				<p>GENDER</p>
+				<button class="bbclass" onclick={genderc} if:true={genderbutton} value={gender}>{gender}</button>
+				<div class="dropdown-content" if:true={showg}>
+					<button onclick={handlegender} value="Male">Male</button>
+					<button onclick={handlegender} value="Female">Female</button>
+				</div>
+				<p>AGE</p>
+				<input type="number" value={age} onchange={agec} />
+			</div>
+
+				<div class="creation2">
+					<p>PHONE</p>
+					<input type="phone" value={phone} placeholder="phone" onchange={phonec} />
+					<input type="phone" value={otherphone} placeholder="other phone" onchange={otherphonec} />
+					<p>EMAIL</p>
+					<input type="email" value={email} onchange={emailc} />
+					<p>ADDRESS</p>
+					<input type="text"  value={address} onchange={addressc} />
+				</div>
+			</div>
+
+
+				<div class="inter2" if:true={showpass}>
+					<div class="passlist-inter">
+						<div for:each={passlist} for:item="pass" key={pass.Id} class="passlist">
+							<p>NAME:{pass.Name}</p>
+							<p>AGE:{pass.Age__c}</p>
+							<p>GENDER:{pass.Gender__c}</p>
+							<button class="delete-button" onclick={oneclick} value={pass.Id}>DELETE</button>
+						</div>
+					</div>
+				</div>
+
+
+				<div class="backbutton" if:true={showbackbutton}>
+					<button class="button2" onclick={closepopup}>CLOSE</button>
+					<button class="button1" onclick={createnewpass}>ADD</button>
+				</div>
+
+				<div class="backbutton" if:true={showbackbutton2}>
+					<button class="button3" onclick={closepopup}>CLOSE</button>
+				</div>
+			</div>
+</template>
